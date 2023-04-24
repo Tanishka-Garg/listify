@@ -8,7 +8,7 @@ const Home = () => {
         <h2>ADD ITEM</h2>
         <form>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">
+            <label htmlFor="exampleInputPassword1" className="form-label">
               Title
             </label>
             <input
@@ -22,7 +22,7 @@ const Home = () => {
             </div>
           </div>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">
+            <label htmlFor="exampleInputPassword1" className="form-label">
               Description
             </label>
             <input
