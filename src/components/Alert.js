@@ -3,11 +3,14 @@ import React from "react";
 const Alert = (props) => {
   return (
     <div>
-      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+      <div
+        className={`alert alert-${props.type} alert-dismissible fade show`}
+        role="alert"
+      >
         <strong>{props.message}</strong>.
         <button
           type="button"
-          class="btn-close"
+          className="btn-close"
           data-bs-dismiss="alert"
           aria-label="Close"
         ></button>

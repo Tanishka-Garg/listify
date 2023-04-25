@@ -13,7 +13,7 @@ function App() {
       <NoteState>
         <Router>
           <Navbar />
-          <Alert message={"deleted"} />
+          <Alert message={"deleted"} type={"danger"} />
           <div className="container">
             <Routes>
               <Route path="/" element={<Home />}></Route>
