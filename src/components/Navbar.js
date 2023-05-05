@@ -58,6 +58,12 @@ const Navbar = () => {
               <button className="btn btn-outline-success" type="submit">
                 Search
               </button>
+              <Link className="btn btn-outline-light mx-2" to="/login">
+                Login
+              </Link>
+              <Link className="btn btn-outline-light" to="/signup">
+                signup
+              </Link>
             </form>
           </div>
         </div>

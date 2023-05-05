@@ -1,12 +1,14 @@
 {
   "cSpell.words": [
     "addnote",
+    "confirmpassword",
     "deletenote",
     "describedby",
     "edescription",
     "editnote",
     "etitle",
     "fetchallnotes",
+    "fetchuser",
     "Imlhd",
     "labelledby",
     "listify",

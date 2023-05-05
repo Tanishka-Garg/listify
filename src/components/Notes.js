@@ -122,6 +122,9 @@ const Notes = () => {
                 Close
               </button>
               <button
+                disabled={
+                  note.etitle.length < 3 || note.edescription.length < 2
+                }
                 type="button"
                 onClick={handleClick}
                 className="btn btn-primary"
