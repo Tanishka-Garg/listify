@@ -53,8 +53,8 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
-            <form className="d-flex" role="search">
-              <input
+            {/* < className="d-flex" role="search"> */}
+            {/* <input
                 className="form-control me-2"
                 type="search"
                 placeholder="Search"
@@ -62,25 +62,24 @@ const Navbar = () => {
               />
               <button className="btn btn-outline-success" type="submit">
                 Search
+              </button> */}
+            {!localStorage.getItem("token") ? (
+              <form className="d-flex mx-1">
+                <Link className="btn btn-outline-light mx-2" to="/login">
+                  Login
+                </Link>
+                <Link className="btn btn-outline-light" to="/signup">
+                  signup
+                </Link>
+              </form>
+            ) : (
+              <button
+                className="btn btn-outline-success mx-1"
+                onClick={handleLogout}
+              >
+                logout
               </button>
-              {!localStorage.getItem("token") ? (
-                <form className="d-flex mx-1">
-                  <Link className="btn btn-outline-light mx-2" to="/login">
-                    Login
-                  </Link>
-                  <Link className="btn btn-outline-light" to="/signup">
-                    signup
-                  </Link>
-                </form>
-              ) : (
-                <button
-                  className="btn btn-outline-success mx-1"
-                  onClick={handleLogout}
-                >
-                  logout
-                </button>
-              )}
-            </form>
+            )}
           </div>
         </div>
       </nav>
