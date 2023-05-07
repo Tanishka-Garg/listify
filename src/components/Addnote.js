@@ -24,58 +24,64 @@ const Addnote = (props) => {
   return (
     <div>
       <div className="container my-3">
-        <h2>ADD ITEM</h2>
-        <form>
-          <div className="mb-3">
-            <label htmlFor="title" className="form-label">
-              Title
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              aria-label="Sizing example input"
-              id="title"
-              name="title"
-              aria-describedby="inputGroup-sizing-sm"
-              value={note.title}
-              onChange={onChange}
-            />
+        <div className="container h-100">
+          <div className="row d-flex justify-content-center align-items-center h-100">
+            <div className="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div className="card-body text-success">
+                <h2 className="text-uppercase text-center mb-5">ADD ITEM</h2>
+                <form>
+                  <div className="mb-3">
+                    <input
+                      placeholder="Title"
+                      type="text"
+                      className="form-control"
+                      aria-label="Sizing example input"
+                      id="title"
+                      name="title"
+                      aria-describedby="inputGroup-sizing-sm"
+                      value={note.title}
+                      onChange={onChange}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <input
+                      placeholder="Description"
+                      type="text"
+                      className="form-control"
+                      id="description"
+                      name="description"
+                      value={note.description}
+                      onChange={onChange}
+                    />
+                  </div>
+                  <div className="mb-3">
+                    <input
+                      type="text"
+                      placeholder="Tag"
+                      className="form-control"
+                      id="tag"
+                      name="tag"
+                      value={note.tag}
+                      onChange={onChange}
+                    />
+                  </div>
+                  <div className="d-flex justify-content-center ">
+                    <button
+                      disabled={
+                        note.title.length < 3 || note.description.length < 2
+                      }
+                      type="submit"
+                      onClick={handleClick}
+                      className="btn btn-success"
+                    >
+                      Add Note
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
-          <div className="mb-3">
-            <label htmlFor="description" className="form-label">
-              Description
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="description"
-              name="description"
-              value={note.description}
-              onChange={onChange}
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="tag" className="form-label">
-              tag
-            </label>
-            <input
-              type="text"
-              className="form-control"
-              id="tag"
-              name="tag"
-              value={note.tag}
-              onChange={onChange}
-            />
-          </div>
-          <button
-            disabled={note.title.length < 3 || note.description.length < 2}
-            type="submit"
-            onClick={handleClick}
-            className="btn btn-primary"
-          >
-            Add Note
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );
