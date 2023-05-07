@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react";
 import noteContext from "../context/notes/noteContext";
+import { useNavigate } from "react-router-dom";
 
-const Addnote = () => {
+const Addnote = (props) => {
+  const navigate = useNavigate();
   const context = useContext(noteContext);
   const { addnote } = context;
   const [note, setNote] = useState({
@@ -13,10 +15,12 @@ const Addnote = () => {
     e.preventDefault();
     addnote(note.title, note.description, note.tag);
     setNote({ title: "", description: "", tag: "" });
+    props.showAlert("note added successfully", "success");
   };
   const onChange = (e) => {
     setNote({ ...note, [e.target.name]: e.target.value });
   };
+
   return (
     <div>
       <div className="container my-3">

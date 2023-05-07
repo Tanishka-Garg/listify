@@ -16,6 +16,7 @@ const Noteitem = (props) => {
             className="fa-solid fa-trash-can mx-3"
             onClick={() => {
               deletenote(note._id);
+              props.showAlert(" deleted successfully", "danger");
             }}
           ></i>
           <i
